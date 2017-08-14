@@ -1,0 +1,23 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+project 'Test'
+
+platform :ios, '8.0'
+inhibit_all_warnings!
+use_frameworks!
+
+
+target :Test do
+	pod 'AlamofireObjectMapper'
+    pod 'AlamofireImage'
+    pod 'FacebookLogin'
+    pod 'ObjectMapper'
+    pod 'PhoneNumberKit'
+    pod 'UIImageEffects'
+    pod 'pop'
+    pod 'RxSwift'
+    pod 'RxCocoa'
+
+    pod 'YandexMobileMetrica/Dynamic'
+    pod 'YandexMobileMetricaPush/Dynamic'
+end

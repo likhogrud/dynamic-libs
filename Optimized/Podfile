@@ -1,0 +1,42 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+project 'Test'
+
+platform :ios, '8.0'
+inhibit_all_warnings!
+use_frameworks!
+
+plugin 'cocoapods-amimono'
+require 'cocoapods-amimono/patcher'
+
+target :Test do
+	pod 'AlamofireObjectMapper'
+    pod 'AlamofireImage'
+    pod 'FacebookLogin'
+    pod 'ObjectMapper'
+    pod 'PhoneNumberKit'
+    pod 'UIImageEffects'
+    pod 'pop'
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    pod 'YandexMobileMetrica/Dynamic'
+    pod 'YandexMobileMetricaPush/Dynamic'
+end
+
+post_install do | installer |
+
+
+    Amimono::Patcher.patch!(installer)
+
+    installer.aggregate_targets.each do |aggregate_target|
+    target_xcconfigs = aggregate_target.xcconfigs
+        aggregate_target.user_build_configurations.each do |config_name,_|
+            path = aggregate_target.xcconfig_path(config_name)
+            xcconfig = Xcodeproj::Config.new(path)
+            xcconfig.frameworks.delete("YandexMobileMetrica")
+            xcconfig.frameworks.delete("YandexMobileMetricaPush")
+            xcconfig.save_as(path)
+        end
+    end
+
+end

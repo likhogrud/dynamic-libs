@@ -1,0 +1,5 @@
+source "http://rubygems.org"
+
+gem 'cocoapods', '1.2.1'
+gem 'cocoapods-deintegrate'
+gem 'cocoapods-amimono', git: 'git://github.com/likhogrud/cocoapods-amimono.git'
