@@ -1,0 +1,28 @@
+# from https://github.com/github/gitignore/blob/master/Objective-C.gitignore
+
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+## Various settings
+**/xcuserdata
+**/Pods
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xccheckout
+*.xcscmblueprint
+*.moved-aside
+*.xcuserstate
+*.DS_Store
+*.xccheckout
+appledoc
+jazzydocs
+.idea
+
+
